@@ -1,4 +1,4 @@
-def encrypt_caesar(encryptedword):
+def encrypt_caesar(plaintext: str)->str:
     """
      Encrypts plaintext using a Caesar cipher.
     >>> encrypt_caesar("PYTHON")
@@ -10,18 +10,19 @@ def encrypt_caesar(encryptedword):
     >>> encrypt_caesar("")
     """
     ciphertext = ""
-    for symb in encryptedword:
-        if 'A' <= sumb <= 'Z' or 'a'<= sumb <= 'z':
+    sumb = ""
+    for a in plaintext:
+        if 'A' <= sumb <= 'Z' or 'a' <= sumb <= 'z':
             code_sumb = ord(sumb) + 3
-            if code_sumb > ord('Z')and code_sumb < ord('a') or code_sumb > ord('z'):
+            if code_sumb > ord('Z') and code_sumb < ord('a') or code_sumb > ord('z'):
                 code_sumb -= 26
             ciphertext += chr(code_sumb)
         else:
-            ciphertext +=sumb
+            ciphertext += sumb
     return ciphertext
 
 
-def decrypt_caesar(ciphertext):
+def decrypt_caesar(ciphertext: str)->str:
     """
     >>> decrypt_caesar("SBWKRQ")
     'PYTHON'
@@ -32,14 +33,14 @@ def decrypt_caesar(ciphertext):
     >>> decrypt_caesar("")
     ''
     """
-    encryptedword = ""
+    plaintext = ""
     for sumb in ciphertext:
         if 'A' <= sumb <= 'Z' or 'a' <= sumb <= 'z':
             code_sumb = ord(sumb) - 3
             if code_sumb > ord('Z') and code_sumb < ord('a') or code_sumb < ord('A'):
                 code_sumb += 26
-            encryptedword += chr(code_sumb)
+            plaintext += chr(code_sumb)
         else:
-            encryptedword += sumb
+            plaintext += sumb
 
-    return encryptedword
+    return plaintext

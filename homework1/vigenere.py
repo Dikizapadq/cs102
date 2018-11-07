@@ -1,5 +1,5 @@
-def encrypt_vigenere(plaintext,keyword):
-     """
+def encrypt_vigenere(plaintext: str, keyword: str)-> str:
+    """
     >>> encrypt_vigenere("PYTHON", "A")
     'PYTHON'
     >>> encrypt_vigenere("python", "a")
@@ -7,7 +7,7 @@ def encrypt_vigenere(plaintext,keyword):
     >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
     'LXFOPVEFRNHR'
     """
-      ciphertext = ""
+    ciphertext = ""
     for num, symbol in enumerate(plaintext):
         if 'A' <= symbol <= 'Z' or 'a' <= symbol <= 'z':
             shift = ord(keyword[num % len(keyword)])
@@ -23,15 +23,8 @@ def encrypt_vigenere(plaintext,keyword):
     return ciphertext
 
 
-def decrypt_vigenere(ciphertext, keyword):
-    """
-    >>> decrypt_vigenere("PYTHON", "A")
-    'PYTHON'
-    >>> decrypt_vigenere("python", "a")
-    'python'
-    >>> decrypt_vigenere("LXFOPVEFRNHR", "LEMON")
-    'ATTACKATDAWN'
-    """
+def decrypt_vigenere(ciphertext: str, keyword: str)-> str:
+
     plaintext = ""
     for num, symbol in enumerate(ciphertext):
         if 'A' <= symbol <= 'Z' or 'a' <= symbol <= 'z':
