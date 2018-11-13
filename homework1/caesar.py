@@ -1,6 +1,7 @@
 def encrypt_caesar(plaintext: str)->str:
     """
-     Encrypts plaintext using a Caesar cipher.
+    Encrypts plaintext using a Caesar cipher.
+
     >>> encrypt_caesar("PYTHON")
     'SBWKRQ'
     >>> encrypt_caesar("python")
@@ -8,10 +9,11 @@ def encrypt_caesar(plaintext: str)->str:
     >>> encrypt_caesar("Python3.6")
     'Sbwkrq3.6'
     >>> encrypt_caesar("")
+    ''
     """
     ciphertext = ""
     sumb = ""
-    for a in plaintext:
+    for sumb in plaintext:
         if 'A' <= sumb <= 'Z' or 'a' <= sumb <= 'z':
             code_sumb = ord(sumb) + 3
             if code_sumb > ord('Z') and code_sumb < ord('a') or code_sumb > ord('z'):
@@ -24,6 +26,8 @@ def encrypt_caesar(plaintext: str)->str:
 
 def decrypt_caesar(ciphertext: str)->str:
     """
+    Decrypts a ciphertext using a Caesar cipher.
+
     >>> decrypt_caesar("SBWKRQ")
     'PYTHON'
     >>> decrypt_caesar("sbwkrq")

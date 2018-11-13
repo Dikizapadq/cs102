@@ -1,12 +1,14 @@
 def encrypt_vigenere(plaintext: str, keyword: str)-> str:
     """
-    >>> encrypt_vigenere("PYTHON", "A")
-    'PYTHON'
-    >>> encrypt_vigenere("python", "a")
-    'python'
-    >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
-    'LXFOPVEFRNHR'
-    """
+        Encrypts plaintext using a Vigenere cipher.
+
+        >>> encrypt_vigenere("PYTHON", "A")
+        'PYTHON'
+        >>> encrypt_vigenere("python", "a")
+        'python'
+        >>> encrypt_vigenere("ATTACKATDAWN", "LEMON")
+        'LXFOPVEFRNHR'
+        """
     ciphertext = ""
     for num, symbol in enumerate(plaintext):
         if 'A' <= symbol <= 'Z' or 'a' <= symbol <= 'z':
@@ -24,7 +26,16 @@ def encrypt_vigenere(plaintext: str, keyword: str)-> str:
 
 
 def decrypt_vigenere(ciphertext: str, keyword: str)-> str:
+    """
+        Decrypts a ciphertext using a Vigenere cipher.
 
+        >>> decrypt_vigenere("PYTHON", "A")
+        'PYTHON'
+        >>> decrypt_vigenere("python", "a")
+        'python'
+        >>> decrypt_vigenere("LXFOPVEFRNHR", "LEMON")
+        'ATTACKATDAWN'
+        """
     plaintext = ""
     for num, symbol in enumerate(ciphertext):
         if 'A' <= symbol <= 'Z' or 'a' <= symbol <= 'z':
